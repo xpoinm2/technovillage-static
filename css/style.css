@@ -92,7 +92,7 @@ body {
 .main-nav a:hover {
   color: #008CFF;
 }
-.header-actions {
+.messenger-icons {
   position: fixed;
   top: var(--messenger-icons-top);
   right: var(--messenger-icons-right);
