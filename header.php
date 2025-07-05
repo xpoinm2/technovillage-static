@@ -33,7 +33,7 @@
           ] ); ?>
         </nav>
 
-        <div class="header-actions">
+        <div class="header-actions" style="--messenger-icon-offset: 5vh;">
           <a href="https://wa.me/..." class="icon" aria-label="WhatsApp">
             <img src="<?php echo get_template_directory_uri(); ?>/img/whatsapp.svg" alt="WhatsApp">
           </a>

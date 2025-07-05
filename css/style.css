@@ -10,6 +10,12 @@ body {
   color: #2A2A2A;
 }
 
+/* Controls vertical position of WhatsApp and Telegram icons */
+:root {
+  --messenger-icon-offset: 40vh;
+}
+
+
 /* Универсальный контейнер */
 .container {
   width: 90%;
@@ -77,9 +83,9 @@ body {
   color: #008CFF;
 }
 .header-actions {
-  position: absolute;
-  top: 55%;
-  right: 5vw;
+  position: fixed;
+  top: var(--messenger-icon-offset);
+  right: 12vw;
   transform: translateY(-50%);
   display: flex;
   gap: 1vw;
