@@ -10,9 +10,19 @@ body {
   color: #2A2A2A;
 }
 
-/* Controls vertical position of WhatsApp and Telegram icons */
+/* Positioning and size controls for header icons and button */
 :root {
-  --messenger-icon-offset: 40vh;
+  /* messenger icons positioning */
+  --messenger-icons-top: 40vh;
+  --messenger-icons-right: 12vw;
+
+  /* header button positioning */
+  --header-button-top: 40vh;
+  --header-button-right: 10vw;
+
+  /* header button size */
+  --header-button-width: auto;
+  --header-button-height: auto;
 }
 
 
@@ -84,13 +94,13 @@ body {
 }
 .header-actions {
   position: fixed;
-  top: var(--messenger-icon-offset);
-  right: 12vw;
+  top: var(--messenger-icons-top);
+  right: var(--messenger-icons-right);
   transform: translateY(-50%);
   display: flex;
   gap: 1vw;
 }
-.header-actions .icon {
+.messenger-icons .icon {
   width: 1.5vw;
   height: 1.5vw;
   margin: 0 0.5vw;
@@ -99,21 +109,33 @@ body {
   justify-content: center;
   transition: transform 0.2s, filter 0.2s;
 }
-.header-actions .icon img {
+.messenger-icons .icon img {
   width: 100%;
   height: auto;
 }
-.header-actions .icon:hover {
+.messenger-icons .icon:hover {
   transform: scale(1.1);
   filter: brightness(1.3);
+}
+.header-button-wrapper {
+  position: fixed;
+  top: var(--header-button-top);
+  right: var(--header-button-right);
+  transform: translateY(-50%);
 }
 .header-button {
   background-color: #008CFF;
   color: #ffffff;
-  padding: 0.8% 2.5%;
+  padding: 4% 8%;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--header-button-width);
+  height: var(--header-button-height);
+  box-sizing: border-box;
   transition: background-color 0.3s, transform 0.2s;
 }
 .header-button:hover {
