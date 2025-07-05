@@ -24,6 +24,10 @@ body {
   /* header button size relative to screen width to keep 200x47 ratio */
   --header-button-width: 10.55vw;  /* 200/1896*100 */
   --header-button-height: 2.48vw;  /* 47/1896*100 */
+
+    /* hero subtitle positioning */
+  --hero-subtitle-top: 0.1vh;
+  --hero-subtitle-left: 5vw
 }
 
 
@@ -55,12 +59,12 @@ body {
 .block-container::after {
   content: "";
   position: absolute;
+  top: -5%;
   bottom: 0;
   right: 0;
   width: 46%;
-  height: 100%;
   background: url('../img/bg-curves.png') no-repeat bottom right;
-  background-size: contain;
+  background-size: cover;
   pointer-events: none; /* не перекрывать элементы */
 }
 /* тянем header и hero на всю область */
@@ -174,7 +178,24 @@ body {
   align-items: stretch;  /* растягивает детей по высоте */
 }
 .hero-text {
+  position: relative;
   flex: 1;
+}
+.hero-subtitle {
+  position: absolute;
+  top: var(--hero-subtitle-top);
+  left: var(--hero-subtitle-left);
+  width: 390px;
+  height: 48px;
+  padding: 0 10px;
+  background-color: #2A2A2A;
+  color: #ffffff;
+  font-family: 'Manrope', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border-radius: 12px;
 }
 .hero-image {
   position: absolute;
@@ -182,6 +203,7 @@ body {
   right: 23%;            /* отступ от правой стороны экрана */
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 .hero-image img {
   aspect-ratio: 671 / 597; /* сохраняем пропорции */

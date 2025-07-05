@@ -41,8 +41,9 @@
             <img src="<?php echo get_template_directory_uri(); ?>/img/telegram.svg" alt="Telegram">
           </a>
                   </div>
-        <div class="header-button-wrapper" style="--header-button-top: 5vh; --header-button-right: 7vw;">
-          <a href="#contact-form" class="btn header-button">ОСТАВИТЬ ЗАЯВКУ</a>
+          <div class="header-button-wrapper" style="--header-button-top: 5vh; --header-button-right: 7vw;">
+            <a href="#contact-form" class="btn header-button">ОСТАВИТЬ ЗАЯВКУ</a>
+          </div>
+          <img src="<?php echo get_template_directory_uri(); ?>/img/phone.png" class="header-photo" alt="">
         </div>
-      </div>
-    </header>
+</header>
