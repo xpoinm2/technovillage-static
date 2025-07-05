@@ -8,6 +8,7 @@ body {
   font-family: 'Manrope', Arial, sans-serif;
   background-color: #ffffff;
   color: #2A2A2A;
+    overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 /* Positioning and size controls for header icons and button */
@@ -147,6 +148,7 @@ body {
 
 /* ===== HERO ===== */
 .hero {
+  position: relative; /* чтобы размещать картинку телефонов абсолютно */
   flex: 1;
   display: flex;
   align-items: center;
@@ -162,15 +164,16 @@ body {
   flex: 1;
 }
 .hero-image {
-  flex: 0 0 50%;
+  position: absolute;
+  bottom: 0;             /* прижимаем к низу серого прямоугольника */
+  right: 20%;            /* отступ от правой стороны экрана */
   display: flex;
-  align-items: flex-end; /* прижимает содержимое вниз */
   justify-content: center;
-  margin-top: auto;
 }
 .hero-image img {
-  width: 100%;
-  height: auto;
+  aspect-ratio: 671 / 597; /* сохраняем пропорции 671x597 */
+  height: 50%;             /* 597/720 из макета */
+  width: auto;
 }
 
 /* ===== BRANDS ===== */
@@ -299,7 +302,7 @@ body {
     margin: 0 auto;
   }
   .about-wrapper {
-    width: 100vw;
+    width: 100%;
     transform: translateX(-50%);
     left: 50%;
   }
