@@ -26,8 +26,8 @@ body {
   --header-button-height: 2.48vw;  /* 47/1896*100 */
 
     /* hero subtitle positioning */
-  --hero-subtitle-top: 0.1vh;
-  --hero-subtitle-left: 5vw
+  --hero-subtitle-top: 20vh;
+  --hero-subtitle-left: 0vw
 }
 
 
@@ -168,7 +168,7 @@ body {
   position: relative; /* чтобы размещать картинку телефонов абсолютно */
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* прижимаем контент к верху блока */
   justify-content: center;
 }
 .hero-inner {
