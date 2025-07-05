@@ -146,14 +146,6 @@ body {
   transform: translateY(-3px);
 }
 
-.header-photo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: auto;
-}
-
 /* ===== HERO ===== */
 .hero {
   position: relative; /* чтобы размещать картинку телефонов абсолютно */
@@ -174,14 +166,15 @@ body {
 .hero-image {
   position: absolute;
   bottom: 0;             /* прижимаем к низу серого прямоугольника */
-  right: 20%;            /* отступ от правой стороны экрана */
+  right: 23%;            /* отступ от правой стороны экрана */
   display: flex;
   justify-content: center;
 }
 .hero-image img {
-  aspect-ratio: 671 / 597; /* сохраняем пропорции 671x597 */
-  height: 50%;             /* 597/720 из макета */
-  width: auto;
+  aspect-ratio: 671 / 597; /* сохраняем пропорции */
+  width: 25vw;            /* масштабируем от ширины экрана */
+  max-width: 671px;       /* не превышаем оригинал */
+  height: auto;
 }
 
 /* ===== BRANDS ===== */
