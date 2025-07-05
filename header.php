@@ -34,8 +34,12 @@
         </nav>
 
         <div class="header-actions">
-          <a href="https://wa.me/..." class="icon whatsapp" aria-label="WhatsApp"></a>
-          <a href="https://t.me/..." class="icon telegram" aria-label="Telegram"></a>
+          <a href="https://wa.me/..." class="icon" aria-label="WhatsApp">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://t.me/..." class="icon" aria-label="Telegram">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/telegram.svg" alt="Telegram">
+          </a>
           <a href="#contact-form" class="btn header-button">ОСТАВИТЬ ЗАЯВКУ</a>
         </div>
       </div>
