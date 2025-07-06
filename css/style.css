@@ -92,7 +92,8 @@ html {
 .header-container {
   background-image: url('../img/bg-curves.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
+  background-position: right bottom;
 }
 
 /* декоративный фон в правом нижнем углу */
@@ -315,7 +316,7 @@ html {
 .hero-image {
   position: absolute;
   bottom: 0;             /* прижимаем к низу серого прямоугольника */
-  right: 20%;            /* отступ от правой стороны экрана */
+  right: 18%;            /* отступ от правой стороны экрана */
   display: flex;
   justify-content: center;
   z-index: 1;
@@ -489,17 +490,19 @@ html {
 .partnership .decor-ul,
 .partnership .decor-dr {
   position: absolute;
-  width: 200px;   /* подберите под свой макет */
+  width: 700px;   /* подберите под свой макет */
   height: auto;
-  opacity: 0.2;
+  opacity: 4.2;
 }
 .partnership .decor-ul {
-  top: 0;
-  left: 0;
+  top: 0px;   /* compensate container padding */
+  left: 0px; /* stick to the outer corner */
+  pointer-events: none;
 }
 .partnership .decor-dr {
-  bottom: 0;
-  right: 0;
+  bottom: 0px;  /* compensate container padding */
+  right: 0px;  /* stick to the outer corner */
+  pointer-events: none;
 }
 
 /* Метки «ПАРТНЕРСТВО» / «ЭТАПЫ» */
