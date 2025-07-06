@@ -53,6 +53,8 @@ html {
   --brand-item-width: 15%;
     /* about section height control */
   --about-padding-top: 43.02%; /* 816/1896*100 */
+   /* spacing between major blocks */
+  --section-gap: 10vh;
 }
 
 
@@ -69,6 +71,7 @@ html {
   padding: 0.5%;
   display: flex;
   justify-content: center;
+  margin-bottom: var(--block-gap, var(--section-gap));
 }
 .block-container {
   position: relative;
@@ -319,6 +322,7 @@ html {
 .brands {
   padding: 4% 0;
   background-color: #ffffff;
+  margin-bottom: var(--block-gap, var(--section-gap));
 }
 .brands-inner {
   display: flex;
@@ -361,6 +365,7 @@ html {
   margin: 0 auto;
   padding-top: var(--about-padding-top);    /* adjustable height */
   background-color: #ffffff;
+  margin-bottom: var(--block-gap, var(--section-gap));
 }
 .about-wrapper {
   position: absolute;
