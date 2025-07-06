@@ -248,40 +248,64 @@ html {
 
 .hero-list li {
   position: relative;
-  padding-left: 1.2em;
+  padding-left: 1.5em;
   font-family: 'Manrope', Arial, sans-serif;
   font-weight: 400;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 .hero-list li::before {
   content: "\2022"; /* bullet */
   color: #42AAFF;
   position: absolute;
+  font-size: 2em;
   left: 0;
+  top: 0; /* align bullet with the first line */
 }
 
 .hero-list .item-1 {
-  width: clamp(200px, 18.4vw, 349px);
+  width: clamp(200px, 40.4vw, 349px);
   height: clamp(40px, 2.95vw, 56px);
 }
 
 .hero-list .item-2 {
-  width: clamp(200px, 19.8vw, 375px);
+  width: clamp(200px, 30.8vw, 375px);
   height: clamp(40px, 2.95vw, 56px);
+}
+
+/* кнопка прайс-листа */
+.hero-btn {
+  position: absolute;
+  top: var(--hero-btn-top, 0);
+  left: var(--hero-btn-left, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(180px, 15.8vw, 300px);
+  height: clamp(36px, 3.16vw, 60px);
+  background-color: #1D87DE;
+  color: #FFFFFF;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-variant-numeric: lining-nums proportional-nums;
+  border-radius: 12px;
 }
 .hero-image {
   position: absolute;
   bottom: 0;             /* прижимаем к низу серого прямоугольника */
-  right: 23%;            /* отступ от правой стороны экрана */
+  right: 20%;            /* отступ от правой стороны экрана */
   display: flex;
   justify-content: center;
   z-index: 1;
 }
 .hero-image img {
   aspect-ratio: 671 / 597; /* сохраняем пропорции */
-  width: 25vw;            /* масштабируем от ширины экрана */
+  width: 30vw;            /* масштабируем от ширины экрана */
   max-width: 671px;       /* не превышаем оригинал */
   height: auto;
 }
