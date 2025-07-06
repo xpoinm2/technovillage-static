@@ -52,6 +52,8 @@ html {
   --brands-scale: 1;
   --brand-item-width: 15%;
   --about-image-top: 0;   /* отступ картинки от верхней границы блока "о нас" */
+  --about-image-right: 0; /* горизонтальный сдвиг изображения в блоке "о нас" */
+  --about-image-left: 0;  /* дополнительный сдвиг слева, если нужно */
   --about-desc-top: 0;    /* отступ описания от верхней границы блока "о нас" */
  /* default vertical spacing between sections */
   --section-gap: 0vh;
@@ -463,6 +465,7 @@ html {
   align-self: end;
   justify-self: end;
   margin-right: var(--about-image-right, 0);
+  margin-left: var(--about-image-left, 0);
   margin-top: var(--about-image-top);
 }
 .about-image img {
