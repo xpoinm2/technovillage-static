@@ -40,6 +40,8 @@ html {
   /* hero title size relative to screen width */
   --hero-title-width: 40.51vw;  /* 768/1896*100 */
   --hero-title-height: 7.60vw;  /* 144/1896*100 */
+    /* hero title offset from screen top */
+  --hero-title-margin-top: 0vh;
 }
 
 
@@ -196,11 +198,12 @@ html {
 
 /* главный слоган */
 .hero-title {
+  margin-top: var(--hero-title-margin-top);
   width: clamp(300px, var(--hero-title-width), 768px);
   color: #ffffff;
   font-family: 'Manrope', Arial, sans-serif;
   font-weight: 600;
-  font-size: clamp(24px, 3.1vw, 51px);
+  font-size: clamp(24px, 3.1vw, 300px);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
