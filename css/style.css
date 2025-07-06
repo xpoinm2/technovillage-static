@@ -48,6 +48,9 @@ html {
   /* hero list positioning */
   --hero-list-margin-top: 0;
   --hero-item-gap: 0.5rem;
+    /* brand section scaling */
+  --brands-scale: 1;
+  --brand-item-width: 15%;
 }
 
 
@@ -320,10 +323,12 @@ html {
   flex-wrap: wrap;
   gap: 2%;
   justify-content: center;
+  transform: scale(var(--brands-scale));
+  transform-origin: center top;
 }
 .brand-item {
-  width: 15%;
-  padding-top: calc(15% * 113 / 226);
+  width: var(--brand-item-width);
+  padding-top: calc(var(--brand-item-width) * 113 / 226);
   background-color: #F8F8F8;
   border-radius: 12px;
   position: relative;

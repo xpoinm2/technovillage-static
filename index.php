@@ -8,7 +8,7 @@
 
 <!-- ====== BRANDS ====== -->
 <section class="brands">
-  <div class="container brands-inner">
+  <div class="container brands-inner" style="--brands-scale: 0.8; --brand-item-width: 12%;">
     <div class="brand-item"
          data-aos="fade-down"
          data-aos-duration="800">
