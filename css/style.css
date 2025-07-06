@@ -51,6 +51,8 @@ html {
     /* brand section scaling */
   --brands-scale: 1;
   --brand-item-width: 15%;
+    /* about section height control */
+  --about-padding-top: 43.02%; /* 816/1896*100 */
 }
 
 
@@ -357,7 +359,7 @@ html {
   width: 100%;
   max-width: calc(100% - 1%);
   margin: 0 auto;
-  padding-top: 43.02%;    /* 816/1896*100 */
+  padding-top: var(--about-padding-top);    /* adjustable height */
   background-color: #ffffff;
 }
 .about-wrapper {
