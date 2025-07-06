@@ -378,7 +378,7 @@ html {
   width: 74vw;            /* 74% от ширины экрана */
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* две равные колонки */
   gap: 4%;
   align-items: start;     /* по умолчанию выравниваем по верху */
 }
@@ -404,10 +404,19 @@ html {
   font-size: 1rem;
   line-height: 1.5;
 }
+.about-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 720/582; /* размер блока карточек как у изображения */
+  width: 100%;
+  align-self: end;
+}
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 2%;
+  flex: 1;
 }
 .card {
   background-color: #F5F5F5;
@@ -417,7 +426,26 @@ html {
   color: #2A2A2A;
 }
 .card.small { aspect-ratio: 346/178; }
-.card.large { aspect-ratio: 716/178; }
+.card.large {
+  aspect-ratio: 716/178;
+  width: 100%;
+  margin-top: 2%;
+}
+.card h3 {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #1A1C1D;
+}
+.card p {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #1A1C1D;
+}
 .card:hover { transform: translateY(-3px); }
 
 /* приклеиваем картинку к низу сетки через align-self */
@@ -457,7 +485,8 @@ html {
     left: 50%;
   }
   .about-wrapper,
-  .about-image {
+  .about-image,
+  .about-cards-wrapper {
     align-self: center;
   }
 }
