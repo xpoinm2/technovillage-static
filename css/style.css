@@ -51,10 +51,10 @@ html {
     /* brand section scaling */
   --brands-scale: 1;
   --brand-item-width: 15%;
-  --about-image-top: 0;   /* отступ картинки от верхней границы блока "о нас" */
-  --about-image-right: 0; /* горизонтальный сдвиг изображения в блоке "о нас" */
-  --about-image-left: 0;  /* дополнительный сдвиг слева, если нужно */
-  --about-desc-top: 0;    /* отступ описания от верхней границы блока "о нас" */
+  --about-image-top: 10%;   /* отступ картинки от верхней границы блока "о нас" */
+  --about-image-right: 0%; /* горизонтальный сдвиг изображения в блоке "о нас" */
+  --about-image-left: 0%;  /* дополнительный сдвиг слева, если нужно */
+  --about-desc-top: 0%;    /* отступ описания от верхней границы блока "о нас" */
  /* default vertical spacing between sections */
   --section-gap: 0vh;
     /* custom gaps between key blocks */
