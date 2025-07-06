@@ -383,8 +383,12 @@ html {
   align-items: start;     /* по умолчанию выравниваем по верху */
 }
 .about-text {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "label label"
+    "title desc"
+    "cards cards";
   gap: 1.5%;
 }
 .about-label {
@@ -394,22 +398,31 @@ html {
   display: flex; align-items: center;
   justify-content: center;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: calc(0.875rem + 2px);
+  text-transform: uppercase;
+  grid-area: label;
 }
 .about-title {
-  font-size: 2.25rem;
-  line-height: 1.2;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #1A1C1D;
+  grid-area: title;
 }
 .about-desc {
   font-size: 1rem;
   line-height: 1.5;
+  grid-area: desc;
 }
 .about-cards-wrapper {
   display: flex;
   flex-direction: column;
   aspect-ratio: 720/582; /* размер блока карточек как у изображения */
   width: 50%;
-  align-self: end;
+  align-self: flex-start; /* выравниваем по левому краю колонки *//* приклеиваем картинку к низу сетки через align-self */
+  grid-area: cards;
 }
 .about-cards {
   display: grid;
@@ -451,10 +464,12 @@ html {
 /* приклеиваем картинку к низу сетки через align-self */
 .about-image {
   align-self: end;
+  justify-self: end;
+  margin-right: var(--about-image-right, 0);
 }
 .about-image img {
-  width: 100%;
-  height: auto;
+  width: var(--about-image-width, 100%);
+  height: var(--about-image-height, auto);
   display: block;
   border-radius: 20px;
 }
