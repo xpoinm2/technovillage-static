@@ -408,7 +408,7 @@ html {
   display: flex;
   flex-direction: column;
   aspect-ratio: 720/582; /* размер блока карточек как у изображения */
-  width: 100%;
+  width: 50%;
   align-self: end;
 }
 .about-cards {
