@@ -239,25 +239,27 @@ html {
 
 /* список преимуществ */
 .hero-list {
-  list-style: disc;
-  padding-left: 1.2em;
+  list-style: none;
+  padding-left: 0;
   margin-top: var(--hero-list-margin-top);
+  display: flex;
+  gap: var(--hero-item-gap);
 }
 
 .hero-list li {
-  display: block;
+  position: relative;
+  padding-left: 1.2em;
   font-family: 'Manrope', Arial, sans-serif;
   font-weight: 400;
   color: #ffffff;
   line-height: 1.2;
 }
 
-.hero-list li::marker {
+.hero-list li::before {
+  content: "\2022"; /* bullet */
   color: #42AAFF;
-}
-
-.hero-list li + li {
-  margin-top: var(--hero-item-gap);
+  position: absolute;
+  left: 0;
 }
 
 .hero-list .item-1 {
