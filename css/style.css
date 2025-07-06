@@ -82,14 +82,17 @@ html {
   max-width: calc(100% - 1%);            /* 0.5% слева + 0.5% справа */
   aspect-ratio: 2.6333333333 / 1;         /* пропорция шапки 1896:720 */
   background-color: #1A1C1D;
-  /* фон-дуги */
-  background-image: url('../img/bg-curves.png');
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 32px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+/* фон-дуги только для шапки */
+.header-container {
+  background-image: url('../img/bg-curves.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* декоративный фон в правом нижнем углу */
@@ -468,6 +471,7 @@ html {
   max-width: calc(100% - 1%);      /* вычли 0.5% слева + 0.5% справа */
   aspect-ratio: 1896/1566;         /* ширина / высота */
   background-color: #1A1C1D;       /* тёмный фон */
+  background-image: none;          /* убираем фон шапки */
   border-radius: 32px;
   position: relative;
   overflow: hidden;
@@ -475,6 +479,10 @@ html {
   display: flex;
   flex-direction: column;
   gap: 120px;                       /* расстояние между секциями */
+}
+
+.partnership .block-container::after {
+  content: none;
 }
 
 /* Декоративные картинки */
