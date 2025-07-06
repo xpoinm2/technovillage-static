@@ -16,7 +16,7 @@
 <body>
 
   <!-- HEADER + HERO в скруглённом блоке -->
-   <div class="block-wrapper" style="--header-brands-gap: -7vh;">
+  <div class="block-wrapper" style="--header-brands-gap: -7vh;">
     <div class="block-container" data-aos="fade-up">
 
       <!-- HEADER -->
@@ -39,13 +39,15 @@
           <div class="header-button-wrapper" style="--header-button-top: 4vh; --header-button-right: 12vw;">
             <a href="#contact-form" class="btn header-button">ОСТАВИТЬ ЗАЯВКУ</a>
           </div>
+        </div>
       </header>
 
       <!-- HERO -->
       <section class="hero">
         <div class="container hero-inner">
           <div class="hero-text">
-                        <h1 class="hero-title" style="--hero-title-margin-top: 27vh; --hero-title-font-size: clamp(20px, 3.1vw, 300px);"
+            <h1 class="hero-title"
+                style="--hero-title-margin-top: 27vh; --hero-title-font-size: clamp(20px, 3.1vw, 300px);"
                 data-aos="fade-down"
                 data-aos-duration="800">
               Весь <span class="highlight">рынок техники</span><br/>
@@ -57,7 +59,8 @@
                  data-aos-delay="300">
               TECHNOVILLAGE – ОПТОВАЯ КОМПАНИЯ
             </div>
-            <ul class="hero-list" style="--hero-list-margin-top: 3vh; --hero-item-gap: 3vh;"
+            <ul class="hero-list"
+                style="--hero-list-margin-top: 3vh; --hero-item-gap: 3vh;"
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-delay="300">
@@ -106,47 +109,137 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-<section class="about" id="about">
-    <div class="container about-wrapper" data-aos="fade-up">
-      <div class="about-left">
-        <div class="about-label" data-aos="fade-down" data-aos-duration="800">О НАС</div>
-        <h2 class="about-title" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
-          Почему нужно<br/>работать с нами
-        </h2>
-<div class="about-cards-wrapper">
-          <div class="about-cards">
-            <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
-              <h3>170+</h3>
-              <p>Партнеров по всей России и СНГ</p>
-            </div>
-            <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="400">
-              <h3>Качество</h3>
-              <p>Перед отправкой каждый телефон проходит проверку по 30 пунктам</p>
-            </div>
-            <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
-              <h3>Оперативность</h3>
-              <p>Отправка день в день</p>
-            </div>
-            <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="800">
-              <h3>Гарантия</h3>
-              <p>Гарантия на все типы устройств — 60 дней, владеем собственным сервисным центром</p>
-            </div>
-          </div>
-                    <div class="card large" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000">
-            <h3>Личный менеджер для всех клиентов</h3>
-            <p>Оперативный ответ для каждого</p>
-          </div>
+  <!-- ABOUT (абсолютное позиционирование) -->
+  <section id="about">
+    <div class="about-container" data-aos="fade-up">
+      <div class="about-label" data-aos="fade-down" data-aos-duration="800">О НАС</div>
+
+      <h2 class="about-title"
+          data-aos="fade-down"
+          data-aos-duration="800"
+          data-aos-delay="300">
+        Почему нужно<br/>работать с нами
+      </h2>
+
+      <p class="about-text"
+         data-aos="fade-left"
+         data-aos-duration="800"
+         data-aos-delay="500">
+        Компания Techno Village работает с 2019 года. За это время мы завоевали доверие наших клиентов.
+        Наша задача — минимизировать все риски и доставить Вам товар наивысшего качества.
+      </p>
+
+      <div class="about-cards">
+        <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+          <h3>170+</h3>
+          <p>Партнеров по всей России и СНГ</p>
+        </div>
+        <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="400">
+          <h3>Качество</h3>
+          <p>Перед отправкой каждый телефон проходит проверку по 30 пунктам</p>
+        </div>
+        <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
+          <h3>Оперативность</h3>
+          <p>Отправка день в день</p>
+        </div>
+        <div class="card small" data-aos="fade-down" data-aos-duration="800" data-aos-delay="800">
+          <h3>Гарантия</h3>
+          <p>Гарантия на все типы устройств — 60 дней, владеем собственным сервисным центром</p>
+        </div>
+        <div class="card large" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000">
+          <h3>Личный менеджер для всех клиентов</h3>
+          <p>Оперативный ответ для каждого</p>
         </div>
       </div>
-      <div class="about-right">
-        <p class="about-desc" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
-Компания Techno Village работает с 2019 года. За это время мы завоевали доверие наших клиентов.
-        </p>
-        <div class="about-image" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200">
-          <img src="img/about-phones.png" alt="О нас — телефоны"/>
+
+      <div class="about-image"
+           data-aos="fade-up"
+           data-aos-duration="800"
+           data-aos-delay="1200">
+        <img src="img/about-phones.png" alt="О нас — телефоны"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARTNERSHIP & STEPS SECTION ===== -->
+  <section class="partnership block-wrapper">
+    <div class="block-container">
+    <!-- убрали старый фон bg-curves -->
+    <img src="img/decor ul.png" alt="" class="decor-ul">
+      <!-- Метка -->
+      <div class="section-label">ПАРТНЕРСТВО</div>
+      <!-- Заголовок -->
+      <h2 class="section-title">КОМУ ПОДХОДИТ<br>СОТРУДНИЧЕСТВО С НАМИ</h2>
+
+      <!-- Сетка партнерских карточек -->
+      <div class="partnership-cards">
+        <div class="partner-card">
+          <img src="img/img 1.png" alt="">
+          <p>ДЛЯ ВЛАДЕЛЬЦЕВ РОЗНИЧНЫХ МАГАЗИНОВ</p>
+        </div>
+        <div class="partner-card">
+          <img src="img/img 2.png" alt="">
+          <p>ДЛЯ ОНЛАЙН-ПРОДАВЦОВ И ПРОДАВЦОВ<br>НА МАРКЕТПЛЕЙСАХ</p>
+        </div>
+        <div class="partner-card">
+          <img src="img/img 3.png" alt="">
+          <p>ДЛЯ ОПТОВЫХ И МЕЛКО-ОПТОВЫХ<br>ПАРТНЁРОВ</p>
         </div>
       </div>
+
+      <!-- Метка этапов -->
+      <div class="section-label">ЭТАПЫ</div>
+      <!-- Заголовок этапов -->
+      <h2 class="section-title">СХЕМА ЗАКЛЮЧЕНИЯ СДЕЛКИ</h2>
+
+      <!-- Сама схема с шагами и картинкой справа -->
+      <div class="steps-wrapper">
+        <div class="steps-list">
+          <!-- Шаг 1 -->
+          <div class="step">
+            <div class="step-number">ШАГ 1</div>
+            <h3>СВЯЖИТЕСЬ С НАМИ</h3>
+            <p>Через Telegram, Whatsapp или контактный номер телефона</p>
+          </div>
+          <!-- Шаг 2 -->
+          <div class="step">
+            <div class="step-number">ШАГ 2</div>
+            <h3>ОФОРМЛЕНИЕ ЗАКАЗА</h3>
+            <p>Наш менеджер поможет в выборе из нашего наличия</p>
+          </div>
+          <!-- Шаг 3 -->
+          <div class="step">
+            <div class="step-number">ШАГ 3</div>
+            <h3>РАСЧЁТ ЗАКАЗА</h3>
+            <p>Получите расчёт с персональными условиями</p>
+          </div>
+          <!-- Шаг 4 -->
+          <div class="step">
+            <div class="step-number">ШАГ 4</div>
+            <h3>ОПЛАТА ЗАКАЗА</h3>
+            <p>Оплатите любым удобным для Вас способом, после этого заказ отправляется в сборку</p>
+          </div>
+          <!-- Шаг 5 -->
+          <div class="step">
+            <div class="step-number">ШАГ 5</div>
+            <h3>ЛОГИСТИКА ЗАКАЗА</h3>
+            <p>Доставка заказа любой ТК или самовывоз со склада в Москве</p>
+          </div>
+          <!-- Шаг 6 -->
+          <div class="step">
+            <div class="step-number">ШАГ 6</div>
+            <h3>СЕРВИСНАЯ ПОДДЕРЖКА</h3>
+            <p>Остаёмся на связи с Вами после получения заказа по любым вопросам сотрудничества</p>
+          </div>
+        </div>
+
+        <!-- Большая картинка этапов -->
+        <div class="step-image">
+          <img src="img/img 4.png" alt="">
+        </div>
+      </div>
+            <!-- декор снизу-справа -->
+      <img src="img/decor dr.png" alt="" class="decor-dr">
     </div>
   </section>
 

@@ -8,7 +8,6 @@ body {
   font-family: 'Manrope', Arial, sans-serif;
   background-color: #ffffff;
   color: #2A2A2A;
-    overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 html {
@@ -79,13 +78,18 @@ html {
   margin-bottom: var(--header-brands-gap);
 }
 .block-container {
-  position: relative;
   width: 100%;
-  max-width: calc(100% - 1%);
-  padding-top: 38.02%;     /* 720/1896*100 */
+  max-width: calc(100% - 1%);            /* 0.5% слева + 0.5% справа */
+  aspect-ratio: 2.6333333333 / 1;         /* пропорция шапки 1896:720 */
   background-color: #1A1C1D;
+  /* фон-дуги */
+  background-image: url('../img/bg-curves.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 32px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* декоративный фон в правом нижнем углу */
@@ -96,9 +100,6 @@ html {
   bottom: 0;
   right: 0;
   width: 46%;
-  background: url('../img/bg-curves.png') no-repeat bottom right;
-  background-size: cover;
-  pointer-events: none; /* не перекрывать элементы */
 }
 /* тянем header и hero на всю область */
 .block-container > header,
@@ -122,7 +123,7 @@ html {
 .logo {
   position: absolute;
   top: 50%;
-  left: 5vw;
+  left: calc(100% / 17);   /* приблизительно 1/6 от ширины */
   transform: translateY(-50%);
   max-height: 80px;
 }
@@ -362,117 +363,245 @@ html {
   opacity: 1;
 }
 
-/* ===== ABOUT ===== */
-.about {
+/* ===== ABOUT: абсолютное позиционирование внутри одного контейнера ===== */
+.about-container {
   position: relative;
-  width: 100%;
-  max-width: calc(100% - 1%);
-  margin: 0 auto;
-  background-color: #ffffff;
-  margin-bottom: var(--section-gap);
-}
-.about-wrapper {
-  margin-left: 12vw;              /* выравниваем начало блока с логотипом */
-  width: 74vw;                    /* 74% от ширины экрана */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* две равные колонки */
-  gap: 4%;
-  align-items: start;             /* по умолчанию выравниваем по верху */
-}
-.about-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5%;
+  width: 90%;
+  max-width: 1600px;
+  margin: 5rem auto var(--brands-about-gap);
+  /* пропорция 816 / 1896 = 43.02% */
+  padding-top: 43.02%;
 }
 
-.about-right {
-  display: flex;
-  flex-direction: column;
-}
+/* метка «О НАС» */
 .about-label {
-  width: 95px; height: 48px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
   background-color: #2A2A2A;
-  color: #ffffff;
-  display: flex; align-items: center;
-  justify-content: center;
+  color: #fff;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
-  font-size: calc(0.875rem + 2px);
+  font-size: 0.875rem;
   text-transform: uppercase;
-  grid-area: label;
 }
+
+/* заголовок */
 .about-title {
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  width: 45%;
   font-family: 'Manrope', Arial, sans-serif;
   font-weight: 600;
-  font-size: 58px;
-  line-height: 60px;
+  font-size: 3.25rem;
+  line-height: 1.2;
   text-transform: uppercase;
   color: #1A1C1D;
-  grid-area: title;
 }
-.about-desc {
+
+/* текст-описание */
+.about-text {
+  position: absolute;
+  top: 18%;
+  left: 51%;    /* вместо right:5% */
+  width: 40%;
   font-size: 1rem;
   line-height: 1.5;
-  grid-area: desc;
-  margin-top: var(--about-desc-top);
 }
-.about-cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  aspect-ratio: 720/582; /* размер блока карточек как у изображения */
-  width: 50%;
-  align-self: flex-start; /* выравниваем по левому краю колонки *//* приклеиваем картинку к низу сетки через align-self */
-  grid-area: cards;
-}
+
+/* карточки */
 .about-cards {
+  position: absolute;
+  top: 30%;     /* поднимите/опустите, чтобы карточки встали ровно по верху картинки */
+  left: 5%;
+  width: 45%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 2%;
-  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
-.card {
+.card.small {
   background-color: #F5F5F5;
   border-radius: 20px;
-  padding: 2%;
-  transition: transform 0.2s ease;
-  color: #2A2A2A;
-}
-.card.small { aspect-ratio: 346/178; }
-.card.large {
-  aspect-ratio: 716/178;
-  width: 100%;
-  margin-top: 2%;
+  padding: 2rem;
 }
 .card h3 {
-  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 1.75rem;        /* было ~1.25rem, увеличиваем */
+  margin-bottom: 0.75rem;    /* отступ между заголовком и текстом */
   font-weight: 600;
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
-  color: #1A1C1D;
+}
+
+.card.large {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  padding: 2rem;
+  grid-column: span 2;
 }
 .card p {
-  font-family: 'Manrope', Arial, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  color: #1A1C1D;
+  font-size: 1rem;           /* можно уменьшить до 0.9375rem (15px) или оставить */
+  line-height: 1.6;          /* увеличенный межстрочный интервал */
+  margin: 0;                 /* сбрасываем дефолтные отступы */
 }
-.card:hover { transform: translateY(-3px); }
-
-/* приклеиваем картинку к низу сетки через align-self */
+/* === Картинка === */
 .about-image {
-  align-self: end;
-  justify-self: end;
-  margin-right: var(--about-image-right, 0);
-  margin-left: var(--about-image-left, 0);
-  margin-top: var(--about-image-top);
+  position: absolute;
+  top: 30%;     /* вместо bottom:5% */
+  right: 5%;
+  width: 44%;
 }
 .about-image img {
-  width: var(--about-image-width, 160%);
-  height: var(--about-image-height, auto);
+  width: 100%;
+  height: auto;
   display: block;
   border-radius: 20px;
+}
+
+/* ===== PARTNERSHIP & STEPS ===== */
+.partnership.block-wrapper {
+  background-color: #ffffff; /* белая обводка */
+  padding: 0.5%;             /* ~10px на 2000px */
+  display: flex;
+  justify-content: center;
+}
+.partnership .block-container {
+  width: 100%;
+  max-width: calc(100% - 1%);      /* вычли 0.5% слева + 0.5% справа */
+  aspect-ratio: 1896/1566;         /* ширина / высота */
+  background-color: #1A1C1D;       /* тёмный фон */
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 218px;             /* top/right/bottom/left */
+  display: flex;
+  flex-direction: column;
+  gap: 120px;                       /* расстояние между секциями */
+}
+
+/* Декоративные картинки */
+.partnership .decor-ul,
+.partnership .decor-dr {
+  position: absolute;
+  width: 200px;   /* подберите под свой макет */
+  height: auto;
+  opacity: 0.2;
+}
+.partnership .decor-ul {
+  top: 0;
+  left: 0;
+}
+.partnership .decor-dr {
+  bottom: 0;
+  right: 0;
+}
+
+/* Метки «ПАРТНЕРСТВО» / «ЭТАПЫ» */
+.partnership .section-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* Заголовки секций */
+.partnership .section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 32px;
+}
+
+/* Сетка партнерских карточек */
+.partnership-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 120px;
+}
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.partner-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+.partner-card p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Секция шагов */
+.steps-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 120px;
+}
+.steps-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+/* Серые разделители между шагами */
+.steps-list .step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 1px;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Один шаг */
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.step-number {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+.step h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  color: #ffffff;
+}
+.step p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+/* Большая картинка этапов */
+.step-image {
+  width: 60%;
+}
+.step-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 /* ===== AOS ===== */
