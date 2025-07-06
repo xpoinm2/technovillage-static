@@ -382,14 +382,15 @@ html {
   gap: 4%;
   align-items: start;     /* по умолчанию выравниваем по верху */
 }
-.about-text {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "label label"
-    "title desc"
-    "cards cards";
+.about-left {
+  display: flex;
+  flex-direction: column;
   gap: 1.5%;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
 }
 .about-label {
   width: 95px; height: 48px;
