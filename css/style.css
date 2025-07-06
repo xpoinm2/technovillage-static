@@ -261,7 +261,7 @@ html {
   position: absolute;
   font-size: 2em;
   left: 0;
-  top: 0; /* align bullet with the first line */
+  top: -0.5em; /* align bullet with the first line */
 }
 
 .hero-list .item-1 {
@@ -357,8 +357,9 @@ html {
 }
 .about-wrapper {
   position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 12vw;              /* выравниваем начало блока с логотипом */
+  transform: none;
   width: 74vw;            /* 74% от ширины экрана */
   height: 100%;
   display: grid;
