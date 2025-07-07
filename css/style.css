@@ -507,15 +507,18 @@ html {
 
 /* Метки «ПАРТНЕРСТВО» / «ЭТАПЫ» */
 .partnership .section-label {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 20px;
   background: rgba(255,255,255,0.1);
   color: #ffffff;
   font-family: 'Manrope', sans-serif;
   font-size: 0.75rem;
   text-transform: uppercase;
-  padding: 8px 16px;
   border-radius: 12px;
-  margin-bottom: 16px;
+  margin-bottom: -60px;
 }
 
 /* Заголовки секций */
@@ -582,13 +585,16 @@ html {
   gap: 8px;
 }
 .step-number {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 38px;
   background: rgba(255,255,255,0.1);
   color: #ffffff;
   font-family: 'Manrope', sans-serif;
   font-size: 0.875rem;
   text-transform: uppercase;
-  padding: 8px 16px;
   border-radius: 12px;
 }
 .step h3 {
